@@ -1,5 +1,7 @@
 package DiegoZelaya_JaredSaez_B_G2.DiegoZelaya_JaredSaez_B_G2.DTO;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,19 +14,19 @@ import java.util.Date;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class DTOPremios {
+public class DTOPeliculas {
 
-    private Long idPremio;
-    @NotBlank
     private Long idPelicula;
     @NotBlank
-    private String nombrePremio;
+    private String Titulo;
     @NotBlank
-    private String categoria;
+    private String director;
     @NotBlank
-    private Long anoPremio;
+    private String genero;
     @NotBlank
-    private String resultado;
+    private Long anoEstreno;
     @NotBlank
-    private Date fechaRegistro;
+    private Long duracionMinutos;
+    @NotBlank
+    private Date fechaCreacion;
 }
