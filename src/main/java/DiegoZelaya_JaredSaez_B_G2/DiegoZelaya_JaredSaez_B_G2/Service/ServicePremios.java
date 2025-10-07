@@ -59,14 +59,13 @@ public class ServicePremios {
 
             return ConvertirADTOPremios(respuesta);
         }catch (Exception e){
-            log.error("Error al registrar el usuario" + e.getMessage());
-            throw  new ExceptionDatosNoEncontrados("Error al registrar usuario");
+            log.error("Errores al registrar el usuario" + e.getMessage());
+            throw  new ExceptionDatosNoEncontrados("Error al registrar usuario" + e.getMessage());
         }
     }
 
     private EntityPremios ConvertirAEntityPremios(@Valid DTOPremios json) {
         EntityPremios entity = new EntityPremios();
-
         entity.setIdPremio(json.getIdPremio());
 
         if (json.getIdPelicula() != null){
@@ -84,6 +83,7 @@ public class ServicePremios {
 
     public DTOPremios Update(Long id, @Valid DTOPremios json){
         EntityPremios existe = repo.findById(id).orElseThrow(() -> new ExceptionDatosNoEncontrados("No encontrado"));
+
         existe.setIdPremio(json.getIdPremio());
 
         if (json.getIdPelicula() != null){

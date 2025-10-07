@@ -30,7 +30,7 @@ public class ControllerPremios {
 
 
     @PostMapping("/registrar")
-    public ResponseEntity<?> nuevoPremio(
+    public ResponseEntity<Map<String, Object>> nuevoPremio(
             @Valid @RequestBody DTOPremios json, HttpServletRequest httpServletRequest
     ){
         try{
@@ -60,7 +60,7 @@ public class ControllerPremios {
     public ResponseEntity<?> Update(
             @PathVariable Long id,
             @Valid @RequestBody DTOPremios json, BindingResult bindingResult
-    ){
+    )   {
         if (bindingResult.hasErrors()){
             Map<String, String> errores = new HashMap<>();
             bindingResult.getFieldErrors().forEach(error ->
