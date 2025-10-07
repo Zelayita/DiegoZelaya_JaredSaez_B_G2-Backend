@@ -17,16 +17,10 @@ import java.util.Date;
 public class DTOPeliculas {
 
     private Long idPelicula;
-    @NotBlank
     private String Titulo;
-    @NotBlank
     private String director;
-    @NotBlank
     private String genero;
-    @NotBlank
     private Long anoEstreno;
-    @NotBlank
     private Long duracionMinutos;
-    @NotBlank
     private Date fechaCreacion;
 }

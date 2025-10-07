@@ -18,6 +18,6 @@ public class ControllerPelicula {
     private Servicepelicula service;
 
 
-    @GetMapping
+    @GetMapping("/getall")
     public List<DTOPeliculas> Obtener(){return service.Listar();}
 }

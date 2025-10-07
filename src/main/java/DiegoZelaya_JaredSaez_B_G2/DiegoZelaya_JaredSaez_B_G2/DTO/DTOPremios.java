@@ -15,16 +15,10 @@ import java.util.Date;
 public class DTOPremios {
 
     private Long idPremio;
-    @NotBlank
     private Long idPelicula;
-    @NotBlank
     private String nombrePremio;
-    @NotBlank
     private String categoria;
-    @NotBlank
     private Long anoPremio;
-    @NotBlank
     private String resultado;
-    @NotBlank
     private Date fechaRegistro;
 }

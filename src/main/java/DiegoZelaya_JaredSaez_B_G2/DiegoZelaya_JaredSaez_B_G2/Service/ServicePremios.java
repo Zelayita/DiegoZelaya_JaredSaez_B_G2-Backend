@@ -9,10 +9,13 @@ import DiegoZelaya_JaredSaez_B_G2.DiegoZelaya_JaredSaez_B_G2.Repository.Reposito
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -98,11 +101,15 @@ public class ServicePremios {
     }
 
     public boolean Delete(Long id){
-        EntityPremios existencia = repo.findById(id).orElse(null);
-        if (existencia != null){
-            repo.deleteById(id);
-            return true;
+        try{
+            EntityPremios existencia = repo.findById(id).orElse(null);
+            if (existencia != null){
+                repo.deleteById(id);
+                return true;
+            }
+            return false;
+        }catch (Exception e){
+            throw  new IllegalArgumentException("Usuario no Encontrado :" + e.getMessage());
         }
-        return false;
     }
 }
