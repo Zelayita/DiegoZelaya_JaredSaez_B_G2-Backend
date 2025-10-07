@@ -67,7 +67,7 @@ public class ServicePremios {
         entity.setIdPremio(json.getIdPremio());
 
         if (json.getIdPelicula() != null){
-            EntityPeliculas peliculaid = repoID.findById(json.getIdPelicula()).orElseThrow(() -> new IllegalArgumentException("Id no Enocntrado"));
+            EntityPeliculas peliculaid = repoID.findById(json.getIdPelicula()).orElseThrow(() -> new IllegalArgumentException("Id no Enocntrado" + json.getIdPelicula()));
             entity.setIdPelicula(peliculaid);
         }
         entity.setNombrePremio(json.getNombrePremio());

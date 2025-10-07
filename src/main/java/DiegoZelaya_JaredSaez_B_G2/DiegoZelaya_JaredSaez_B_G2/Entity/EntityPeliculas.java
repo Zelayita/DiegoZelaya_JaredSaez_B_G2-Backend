@@ -39,7 +39,7 @@ public class EntityPeliculas {
     private Date fechaCreacion;
 
 
-    @OneToMany(mappedBy = "pelicula", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idPelicula", cascade = CascadeType.ALL)
     private List<EntityPremios> premios;
 
 }
